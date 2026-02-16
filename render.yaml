@@ -1,0 +1,16 @@
+build:
+  env: node
+  buildCommand: cd backend && npm install
+  startCommand: cd backend && npm start
+
+services:
+  - type: web
+    name: task-management-api
+    env: node
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
